@@ -1,0 +1,66 @@
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="#">Logo</a>
+    </div>
+    <div class="uk-navbar-center">...</div>
+    <div class="uk-navbar-right">
+        <a class="uk-navbar-item" href="#loginModal"  uk-toggle>Login</a>
+        <a class="uk-navbar-item" routerLink="#">Log Out</a>
+    </div>
+</nav>
+
+<div id="loginModal" class="uk-modal-container" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header uk-flex">
+            <div class="uk-modal-title uk-width-1-2">
+                <a href="#login" uk-toggle>Login</a>
+               </div>
+            <div class="uk-modal-title"> 
+                 <a href="#signUp" uk-toggle>SignUp</a>
+            </div>
+        </div>
+        <div class="uk-modal-body">
+            <div>
+
+            </div>
+            <!-- <login-form></login-form> -->
+
+
+            <div class="form-group">
+                <label for="name">UserName</label>
+                <input type="text" class="form-control" id="name"
+                       required
+                       [(ngModel)]="username" name="name">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" [(ngModel)]="password">
+            </div>
+        </div>
+        <div class="uk-modal-footer uk-text-center">
+            <button class="uk-button uk-button-default uk-modal-close" type="button"
+            uk-toggle="target: #signUp"
+            >SignUp</button>
+            <button class="uk-button uk-button-primary" type="button">Login</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Sign Up Modal -->
+<div class="form-group" id="signUp" class="uk-modal-container" uk-modal >
+   
+    <input type="text" class="form-control" id="firstname"
+           required placeholder="FirstName"
+           [(ngModel)]="firstname" name="firstname">
+    
+    <input type="lastname" class="form-control" [(ngModel)]="lastname" placeholder="Lastname">
+    
+    <input type="text" class="form-control" id="email"
+           required placeholder="Email"
+           [(ngModel)]="email" name="email">
+    
+    <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password">
+
+    <input type="button" class="uk-margin-top btn btn-primary" (click)="signUp()"  value="SignUp">
+  
+</div>
